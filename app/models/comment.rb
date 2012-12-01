@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  attr_accessible :author_id, :content, :qualification
+  attr_accessible :content, :qualification
+  belongs_to :author
 end
