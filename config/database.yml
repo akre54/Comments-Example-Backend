@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: Comments-Example-Backend_development
   pool: 5
-  username: Comments-Example-Backend
+  username: adam
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: Comments-Example-Backend_test
   pool: 5
-  username: Comments-Example-Backend
+  username: adam
   password:
 
 production:
@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: Comments-Example-Backend_production
   pool: 5
-  username: Comments-Example-Backend
+  username: adam
   password:
