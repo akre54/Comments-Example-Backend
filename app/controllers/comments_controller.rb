@@ -3,24 +3,21 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
-
-    render json: @comments
+    render "comments/index"
   end
 
   # GET /comments/1
   # GET /comments/1.json
   def show
     @comment = Comment.find(params[:id])
-
-    render json: @comment
+    render "comments/show"
   end
 
   # GET /comments/new
   # GET /comments/new.json
   def new
     @comment = Comment.new
-
-    render json: @comment
+    render "comments/show"
   end
 
   # POST /comments
@@ -29,9 +26,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render "customers/show", status: :created, location: @comment
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render "customers/show", status: :unprocessable_entity
     end
   end
 
