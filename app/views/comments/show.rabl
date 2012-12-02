@@ -1,5 +1,5 @@
 object @comment
 attributes :id, :content, :parent
-node(:author) { |comment|
-  comment.author
+child(:author) {
+  attributes :id, :name, :profile_img_url
 }
