@@ -23,12 +23,16 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new
+    @comment.author = User.find params[:author][:id]
+    @comment.qualification = params[:author][:qualification]
+    @comment.content = params[:content]
+    @comment.parent = params[:parent]
 
     if @comment.save
-      render "customers/show", status: :created, location: @comment
+      render "comments/show", status: :created, location: @comment
     else
-      render "customers/show", status: :unprocessable_entity
+      render "comments/show", status: :unprocessable_entity
     end
   end
 
