@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202002211) do
-
-  create_table "authors", :force => true do |t|
-    t.string   "name"
-    t.string   "profile_img_url"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121202225110) do
 
   create_table "comments", :force => true do |t|
     t.integer  "author_id"
@@ -27,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20121202002211) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "parent"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "profile_img_url"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
