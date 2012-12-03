@@ -1,6 +1,6 @@
 object @comment
 attributes :id, :content, :parent
-child :author do
+child :author => :author do
   attributes :id, :name, :profile_img_url
   glue @comment do
     attribute :qualification
